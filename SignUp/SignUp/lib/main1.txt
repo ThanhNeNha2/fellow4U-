@@ -1,0 +1,678 @@
+
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
+
+
+
+void main() {
+  // debugPaintSizeEnabled = true;
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Widget titleSection = Container(
+      padding: const EdgeInsets.only(left: 25,top: 20),
+      child: Row(
+        children: [
+          Image.asset(
+            'images/avatar.jpg',
+            width: 50,
+            height: 50,
+            fit: BoxFit.cover,
+          ),
+          Expanded(
+            /*1*/
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                /*2*/
+                Container(
+                  padding: const EdgeInsets.only(bottom: 5, left: 10,top: 5),
+                  child: const Text(
+                    'Chin-Sun',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'images/calendar.jpg',
+                        width: 25,
+                        height: 25,
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: const Text('Mar 8, 2020',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 15
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          /*3*/
+        ],
+      ),
+    );
+    Widget title1Section = Container(
+      padding: const EdgeInsets.only(left: 25,top: 20),
+      child: Row(
+        children: [
+          Image.asset(
+            'images/avatar2.jpg',
+            width: 50,
+            height: 50,
+            fit: BoxFit.cover,
+          ),
+          Expanded(
+            /*1*/
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                /*2*/
+                Container(
+                  padding: const EdgeInsets.only(bottom: 5, left: 10,top: 5),
+                  child: const Text(
+                    'Chin-Hwa Lee',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Row(
+                    children: [
+                      Container(
+                        child: const Text('Mar 10, 2020',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 15
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          /*3*/
+        ],
+      ),
+    );
+    Widget phoneSection = Container(
+      padding: const EdgeInsets.only(left: 20, right: 25,top: 10),
+      height: 50,
+      color: Colors.white,
+      child: Row (
+        children: [
+          const FaIcon(FontAwesomeIcons.heart, color: Colors.greenAccent,size: 30),
+          Container(
+            padding: const EdgeInsets.only(top: 0,left: 10),
+            child: const Text('Like 46',
+              style: TextStyle(
+                color: Colors.grey,
+                fontWeight: FontWeight.w500,
+                fontSize: 15,
+              ),
+            ),
+          ),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(right: 15),
+                  child:  const FaIcon(FontAwesomeIcons.facebookF,color: Colors.grey,size: 20,),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(right: 15),
+                  child: const FaIcon(FontAwesomeIcons.twitter, color: Colors.grey, size: 20,),
+                ),
+                Image.asset(
+                  'images/talk.jpg',
+                  width: 24,
+                  height: 22,
+                  fit: BoxFit.cover,
+                )
+              ],
+            )
+          ),
+        ],
+      ),
+    );
+
+    Widget buttonSection = Column(
+      children: [
+        _buildButtonColumn('New Destination in Danang City','Feb 5, 2020', 'images/picture.jpg'),
+        _buildButtonColumn(' \$1 Flight Ticket', 'Feb 5, 2020', 'images/picture1.jpg'),
+        _buildButtonColumn('Visit Korea in this Tet Holiday', 'Jan 26, 2020', 'images/picture2.jpg'),
+      ],
+    );
+
+    Widget textSection = Container(
+      padding: const EdgeInsets.only(left: 20,top:5,right: 20),
+      child: const Text(
+        'Title here: Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+        style: TextStyle(
+          fontWeight: FontWeight.w500,
+          fontSize: 24,
+        ),
+        textAlign: TextAlign.left,
+        softWrap: true,
+      ),
+    );
+
+    Widget text1Section = Container(
+      padding: const EdgeInsets.only(left: 20,top:5,right: 20),
+      child: const Column(
+        children: [
+          Text(
+            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            style: TextStyle(
+              fontSize: 18,
+            ),
+            textAlign: TextAlign.left,
+            softWrap: true,
+          ),
+          Text(""),
+          Text("It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+          style: TextStyle(
+            fontSize: 18
+          ),),
+        ],
+      )
+
+
+    );
+
+    Widget imgaesSection = Container(
+      padding: const EdgeInsets.only(top: 10),
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.only(left: 20,right: 10),
+            child:ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(10.0),
+                topRight: Radius.circular(10.0),
+                bottomLeft: Radius.circular(10.0),
+                bottomRight: Radius.circular(10.0),
+              ),
+            child: Image.asset(
+              "images/travel2.jpg",
+              width: 180,
+              height: 139,
+              fit: BoxFit.cover,
+            ),
+          ),
+          ),ClipRRect(
+        borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(10.0),
+              topRight: Radius.circular(10.0),
+              bottomLeft: Radius.circular(10.0),
+               bottomRight: Radius.circular(10.0),
+        ),
+          child:Image.asset(
+              "images/travel3.jpg",
+              width: 180,
+              height: 139,
+            fit: BoxFit.cover,
+            ),
+          ),
+        ],
+      ),
+    );
+
+    Widget commentSection = Container(
+      margin: const EdgeInsets.only(left: 20, top: 10,right: 20),
+      child: const Row(
+        children: [
+          Text("Comments  (1)",
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w400,
+            color:Color(0xFF121212),
+      ),),
+      Expanded(child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children:[ Icon(
+            Icons.keyboard_arrow_up,
+            color: Color(0xFF00CEA6),
+          ),
+          ]
+      )
+      )
+        ],
+      ),
+    );
+
+    Widget commentBoxSections = Container(
+      margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.grey, // Màu của border
+          width: 1.0, // Độ rộng của border
+        ),
+        borderRadius: BorderRadius.circular(10.0), // Độ cong của borderRadius
+      ),
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.only(bottom: 60, left: 10, top: 5), // Thêm padding cho hình ảnh
+            child: Image.asset(
+              'images/chat.jpg',
+              width: 30,
+              height: 30,
+              fit: BoxFit.cover,
+            ),
+          ),
+          const Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TextField(
+                  keyboardType: TextInputType.multiline,
+                  maxLines: 4,
+                  decoration: InputDecoration(
+                    hintText: 'Add Your Comment',
+                    border: InputBorder.none,
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+      );
+
+    FlutterStatusbarcolor.setStatusBarColor(Colors.blue);
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter layout demo',
+      home: Scaffold(
+        body: ListView(
+          children: [
+            Stack(
+              children: [
+                Container(
+                  color: Colors.blue,
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(20.0),
+                      topRight: Radius.circular(20.0),
+                    ),
+                    child: Image.asset(
+                      'images/travel.jpg', // Đường dẫn đến hình ảnh
+                      width: 600,
+                      height: 211,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                const Positioned(
+                  top: 16.0, // Điều chỉnh vị trí theo chiều dọc
+                  left: 16.0, // Điều chỉnh vị trí theo chiều ngang
+                  child: Icon(
+                    Icons.close,
+                    color: Colors.black,
+                    size: 30, // Điều chỉnh kích thước của biểu tượng
+                  ),
+                ),
+              ],
+            ),
+            phoneSection,
+            textSection,
+            titleSection,
+            text1Section,
+            Stack(
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(20.0),
+                      topRight: Radius.circular(20.0),
+                      bottomRight: Radius.circular(20.0),
+                      bottomLeft: Radius.circular(20.0),
+                    ),
+                    child: Image.asset(
+                      'images/travel1.jpg', // Đường dẫn đến hình ảnh
+                      width: 600,
+                      height: 206,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                const Positioned(
+                  top: 10,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  child: Opacity(
+                    opacity: 0.5,
+                      child: Icon(
+                        Icons.circle,
+                        color: Colors.white,
+                        size: 60,
+                      ),
+                    ),
+                  ),
+                const Positioned(
+                  top: 98,
+                  left: 197,
+                  right: 0,
+                  bottom: 0,
+                    child: FaIcon(
+                      FontAwesomeIcons.play,
+                      color: Colors.greenAccent,
+                      size: 30,
+                    ),
+                  ),
+              ],
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 20,right: 20,top: 10),
+              child: const Text('Header here: Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                style: TextStyle(
+                  color: Colors.greenAccent,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 20,right: 30,top: 10),
+              child: const Text("Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            imgaesSection,
+            Container(
+              padding: const EdgeInsets.only(left: 20,right: 30,top: 10),
+              child: const Text("Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+              child: ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(20.0),
+                  topRight: Radius.circular(20.0),
+                  bottomRight: Radius.circular(20.0),
+                  bottomLeft: Radius.circular(20.0),
+                ),
+                child: Image.asset(
+                  'images/travel4.jpg', // Đường dẫn đến hình ảnh
+                  width: 600,
+                  height: 206,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 20,right: 20,top: 10),
+              child: const Text('Header here: Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                style: TextStyle(
+                  color: Colors.greenAccent,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 20,right: 30,top: 10),
+              child: const Text("Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+              child: ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(20.0),
+                  topRight: Radius.circular(20.0),
+                  bottomRight: Radius.circular(20.0),
+                  bottomLeft: Radius.circular(20.0),
+                ),
+                child: Image.asset(
+                  'images/travel4.jpg', // Đường dẫn đến hình ảnh
+                  width: 600,
+                  height: 206,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 20,top: 10),
+              child: Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(left: 7,top: 7),
+                    height: 30,
+                    width: 153,
+                    decoration: BoxDecoration(
+                    color:const Color(0xFFF5F5F5),
+                     borderRadius: BorderRadius.circular(100), // Đặt giá trị BorderRadius
+                    ),
+                    child: const Text(
+                      '#Vietnam Local Guide',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.only(left:7, top: 7),
+                    height: 30,
+                    width: 68,
+                    decoration: BoxDecoration(
+                      color:const Color(0xFFF5F5F5),
+                      borderRadius: BorderRadius.circular(100), // Đặt giá trị BorderRadius
+                    ),
+                    child: const Text(
+                      '#Hoi An',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 20,top: 10),
+              child: Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(left: 7,top: 7),
+                    height: 30,
+                    width: 151,
+                    decoration: BoxDecoration(
+                      color:const Color(0xFFF5F5F5),
+                      borderRadius: BorderRadius.circular(100), // Đặt giá trị BorderRadius
+                    ),
+                    child: const Text(
+                      '#Da Nang Local Tour',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.only(left:7, top: 7),
+                    height: 30,
+                    width: 78,
+                    decoration: BoxDecoration(
+                      color:const Color(0xFFF5F5F5),
+                      borderRadius: BorderRadius.circular(100), // Đặt giá trị BorderRadius
+                    ),
+                    child: const Text(
+                      '#Vietnam',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.only(left:7, top: 7),
+                    height: 30,
+                    width: 63,
+                    decoration: BoxDecoration(
+                      color:const Color(0xFFF5F5F5),
+                      borderRadius: BorderRadius.circular(100), // Đặt giá trị BorderRadius
+                    ),
+                    child: const Text(
+                      '#Guide',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+
+                  ),
+                ],
+              ),
+            ),
+            phoneSection,
+            commentSection,
+            title1Section,
+            Container(
+              padding: const EdgeInsets.only(left: 20,right: 30,top: 10),
+              child: const Text("It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 20,top: 10),
+              child: Row(
+                children: [
+                  const FaIcon(FontAwesomeIcons.commentDots,color: Color(0xFF00CEA6),size: 20,),
+                  Container(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: const Text('Reply',
+                      style: TextStyle(
+                        color: Color(0xFF00CEA6),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            commentBoxSections,
+            Container(
+              padding: const EdgeInsets.only(left: 20,right: 30,top: 10),
+              child: const Text("Related Posts",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            buttonSection,
+            Container(
+              height: 40,
+            ),
+          ],
+        ),
+      ),
+
+    );
+  }
+
+  Column _buildButtonColumn(String val, String icon, String label) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          padding: const EdgeInsets.only(left: 20,top: 20),
+          child: Text(
+            val,
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              color: Colors.black
+            ),
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.only(left: 20,top: 5),
+          child: Text(
+            icon,
+            style: const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFF777777),
+            ),
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.only(left: 20,top: 10,right: 20),
+          child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(10.0),
+                topRight: Radius.circular(10.0),
+                bottomRight: Radius.circular(10.0),
+                bottomLeft: Radius.circular(10.0)
+          ),
+          child: Image.asset(
+            label,
+            width: 600,
+            height: 136,
+            fit: BoxFit.cover,
+          ),
+        ),
+        ),
+      ],
+    );
+  }
+}
